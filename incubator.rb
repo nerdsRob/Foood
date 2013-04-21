@@ -23,6 +23,6 @@ end
 
 # REST
 get '/food' do
- 	content_type :json
-  	hash.to_json
+	content_type :json, 'charset' => 'utf-8'
+	hash.to_json
 end
