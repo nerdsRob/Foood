@@ -4,8 +4,9 @@ require 'htmlentities'
 require 'sinatra'
 require 'json'
 
+url 	= 'http://www.studentenwerk-berlin.de/speiseplan/rss/htw_wilhelminenhof/tag/kurz/8'
 coder 	= HTMLEntities.new
-feed	= Nokogiri::HTML(open('http://www.studentenwerk-berlin.de/speiseplan/rss/htw_wilhelminenhof/tag/kurz/8')) 
+feed	= Nokogiri::HTML(open(url)) 
 food 	= Nokogiri::XML(coder.decode(feed))
 hash	= Hash.new { |h,k| h[k] = [] }
 
